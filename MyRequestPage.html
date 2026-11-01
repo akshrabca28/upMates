@@ -1,0 +1,298 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UpMates | My Requests</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="requests-page">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg requests-navbar">
+        <div class="container">
+
+            <a class="navbar-brand brand-name" href="#">
+                UpMates
+            </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu"
+                aria-controls="navbarMenu"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMenu">
+
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="find-students.html">
+                            Find Students
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="my-skills.html">
+                            My Skills
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="my-requests.html">
+                            My Requests
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="btn profile-btn" href="#">
+                            My Profile
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Main Content -->
+    <main class="container requests-container">
+
+        <!-- Page Heading -->
+        <div class="requests-heading">
+
+            <div>
+                <h1>My Requests</h1>
+
+                <p>
+                    Track your skill exchange requests in one place.
+                </p>
+            </div>
+
+            <a href="find-students.html" class="btn new-request-btn">
+                + New Request
+            </a>
+
+        </div>
+
+
+        <!-- Request Summary -->
+        <div class="row g-3 summary-row">
+
+            <div class="col-12 col-sm-4">
+                <div class="summary-card">
+                    <p>Total Requests</p>
+                    <h2>06</h2>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-4">
+                <div class="summary-card">
+                    <p>Pending</p>
+                    <h2>03</h2>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-4">
+                <div class="summary-card">
+                    <p>Accepted</p>
+                    <h2>02</h2>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Request Filters -->
+        <div class="request-filters">
+
+            <button class="filter-btn active-filter" type="button">
+                All Requests
+            </button>
+
+            <button class="filter-btn" type="button">
+                Pending
+            </button>
+
+            <button class="filter-btn" type="button">
+                Accepted
+            </button>
+
+            <button class="filter-btn" type="button">
+                Rejected
+            </button>
+
+        </div>
+
+
+        <!-- Requests List -->
+        <div class="requests-list">
+
+            <!-- Request 1 -->
+            <div class="request-card">
+
+                <div class="student-avatar avatar-purple">
+                    AS
+                </div>
+
+                <div class="request-details">
+
+                    <div class="request-title-row">
+                        <h3>Aditya Sharma</h3>
+                        <span class="status-badge pending">
+                            Pending
+                        </span>
+                    </div>
+
+                    <p class="request-description">
+                        You want to learn React.js from Aditya.
+                    </p>
+
+                    <div class="skill-exchange">
+                        <span>
+                            <strong>Learn:</strong> React.js
+                        </span>
+
+                        <span>
+                            <strong>Offer:</strong> HTML & CSS
+                        </span>
+                    </div>
+
+                    <p class="request-date">
+                        Sent on 12 October 2026
+                    </p>
+
+                </div>
+
+                <button class="cancel-btn" type="button">
+                    Cancel
+                </button>
+
+            </div>
+
+
+            <!-- Request 2 -->
+            <div class="request-card">
+
+                <div class="student-avatar avatar-blue">
+                    PR
+                </div>
+
+                <div class="request-details">
+
+                    <div class="request-title-row">
+                        <h3>Priya Rao</h3>
+                        <span class="status-badge accepted">
+                            Accepted
+                        </span>
+                    </div>
+
+                    <p class="request-description">
+                        You want to learn UI/UX Design from Priya.
+                    </p>
+
+                    <div class="skill-exchange">
+                        <span>
+                            <strong>Learn:</strong> UI/UX Design
+                        </span>
+
+                        <span>
+                            <strong>Offer:</strong> JavaScript
+                        </span>
+                    </div>
+
+                    <p class="request-date">
+                        Sent on 10 October 2026
+                    </p>
+
+                </div>
+
+                <button class="view-btn" type="button">
+                    View
+                </button>
+
+            </div>
+
+
+            <!-- Request 3 -->
+            <div class="request-card">
+
+                <div class="student-avatar avatar-orange">
+                    RK
+                </div>
+
+                <div class="request-details">
+
+                    <div class="request-title-row">
+                        <h3>Rahul Kumar</h3>
+                        <span class="status-badge rejected">
+                            Rejected
+                        </span>
+                    </div>
+
+                    <p class="request-description">
+                        You want to learn Python from Rahul.
+                    </p>
+
+                    <div class="skill-exchange">
+                        <span>
+                            <strong>Learn:</strong> Python
+                        </span>
+
+                        <span>
+                            <strong>Offer:</strong> Bootstrap
+                        </span>
+                    </div>
+
+                    <p class="request-date">
+                        Sent on 8 October 2026
+                    </p>
+
+                </div>
+
+                <button class="view-btn" type="button">
+                    View
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="requests-footer">
+            © 2026 UpMates. Learn, Share and Grow Together.
+        </footer>
+
+    </main>
+
+    <!-- Bootstrap JavaScript for responsive navbar -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+</body>
+</html>

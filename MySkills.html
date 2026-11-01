@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Skills | SkillSwap</title>
+    <link rel="stylesheet" href="MySkills.css">
+</head>
+<body><header>
+    <h2>SkillSwap</h2>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#" class="active">My Skills</a>
+        <a href="#">My Requests</a>
+        <a href="#">Logout</a>
+    </nav>
+</header>
+
+<main class="container">
+
+    <section class="page-heading">
+        <h1>My Skills</h1>
+        <p>Add your skills and share your knowledge with other students.</p>
+    </section>
+
+    <section class="add-skill">
+        <h2>Add a New Skill</h2>
+
+        <form>
+            <label for="skillName">Skill Name</label>
+            <input type="text" id="skillName"
+                   placeholder="e.g. Web Development" required>
+
+            <label for="category">Category</label>
+            <select id="category" required>
+                <option value="">Select a category</option>
+                <option>Programming</option>
+                <option>Design</option>
+                <option>Communication</option>
+                <option>Business</option>
+                <option>Other</option>
+            </select>
+
+            <label for="description">Description</label>
+            <textarea id="description" rows="4"
+                      placeholder="Describe your skill"></textarea>
+
+            <button type="submit">Add Skill</button>
+        </form>
+    </section>
+
+    <section class="skills-section">
+        <h2>My Added Skills</h2>
+
+        <div class="skill-card">
+            <h3>HTML & CSS</h3>
+            <p>Category: Programming</p>
+            <p>I can create simple and responsive web pages.</p>
+            <button type="button" class="delete-btn">Delete</button>
+        </div>
+
+        <div class="skill-card">
+            <h3>Communication</h3>
+            <p>Category: Communication</p>
+            <p>I enjoy communicating and sharing ideas.</p>
+            <button type="button" class="delete-btn">Delete</button>
+        </div>
+
+    </section>
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,219 @@
+/* Main Page */
+.skills-page {
+background: #dce8ff;
+min-height: 100vh;
+padding: 45px 0 60px;
+font-family: Arial, sans-serif;
+}
+
+/* Heading */
+.skills-heading {
+margin-bottom: 35px;
+}
+
+.skills-heading h1 {
+font-size: 42px;
+font-weight: 600;
+color: #172b4d;
+margin-bottom: 12px;
+}
+
+.skills-heading p {
+font-size: 17px;
+color: #444;
+}
+
+/* Form Card */
+.skill-form-card {
+background: #ffffff;
+padding: 35px;
+border-radius: 15px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+margin-bottom: 55px;
+}
+
+.skill-form-card h2 {
+font-size: 30px;
+margin-bottom: 35px;
+color: #172b4d;
+}
+
+/* Form Labels */
+.skill-form-card .form-label {
+font-size: 17px;
+font-weight: 600;
+color: #222;
+margin-bottom: 12px;
+}
+
+.skill-form-card .form-control,
+.skill-form-card .form-select {
+padding: 13px;
+border: 1px solid #ced4da;
+border-radius: 8px;
+font-size: 16px;
+}
+
+.skill-form-card .form-control:focus,
+.skill-form-card .form-select:focus {
+border-color: #2563eb;
+box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+}
+
+/* Type */
+.skill-type-options {
+display: flex;
+gap: 30px;
+}
+
+.skill-type-options .form-check-label {
+font-size: 16px;
+}
+
+/* Add Button */
+.add-skill-btn {
+width: 100%;
+padding: 13px;
+background: #2563eb;
+color: white;
+border: none;
+border-radius: 8px;
+font-size: 17px;
+font-weight: 600;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.add-skill-btn:hover {
+background: #1d4ed8;
+}
+
+/* Added Skills */
+.added-skills-section h2 {
+font-size: 32px;
+font-weight: 600;
+color: #172b4d;
+margin-bottom: 30px;
+}
+
+/* Skill Card */
+.skill-card {
+background: white;
+padding: 25px;
+border-radius: 14px;
+height: 100%;
+box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+transition: 0.3s;
+}
+
+.skill-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+}
+
+.skill-card h3 {
+font-size: 23px;
+font-weight: 600;
+margin-bottom: 18px;
+color: #172b4d;
+}
+
+/* Badges */
+.skill-badges {
+display: flex;
+gap: 10px;
+margin-bottom: 18px;
+}
+
+.category-badge {
+background: #d1e7dd;
+color: #146c43;
+padding: 7px 13px;
+border-radius: 20px;
+font-size: 13px;
+font-weight: 600;
+}
+
+.type-badge {
+background: #cfe2ff;
+color: #084298;
+padding: 7px 13px;
+border-radius: 20px;
+font-size: 13px;
+font-weight: 600;
+}
+
+/* Description */
+.skill-description {
+color: #555;
+font-size: 15px;
+line-height: 1.6;
+margin-bottom: 22px;
+}
+
+/* Actions */
+.skill-actions {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.edit-btn,
+.delete-btn {
+padding: 9px 20px;
+border-radius: 7px;
+text-decoration: none;
+font-size: 15px;
+cursor: pointer;
+}
+
+.edit-btn {
+color: #2563eb;
+border: 1px solid #2563eb;
+background: white;
+}
+
+.edit-btn:hover {
+background: #2563eb;
+color: white;
+}
+
+.delete-btn {
+background: white;
+color: #dc3545;
+border: 1px solid #dc3545;
+}
+
+.delete-btn:hover {
+background: #dc3545;
+color: white;
+}
+
+/* Empty State */
+.no-skills {
+background: white;
+padding: 35px;
+text-align: center;
+border-radius: 12px;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+
+.skills-heading h1 {
+    font-size: 32px;
+}
+
+.skill-form-card {
+    padding: 22px;
+}
+
+.skill-form-card h2 {
+    font-size: 25px;
+}
+
+.added-skills-section h2 {
+    font-size: 27px;
+}
+
+}

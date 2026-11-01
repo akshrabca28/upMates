@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Requests | SkillSwap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/navbar.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/footer.css">
+<style>
+    body {
+        background: #f7f8fc;
+        font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+        background: white;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+    }
+
+    .brand {
+        font-size: 25px;
+        font-weight: bold;
+        color: #635bdb;
+    }
+
+    .page-header {
+        padding: 35px 0;
+    }
+
+    .section-box {
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+        margin-bottom: 30px;
+    }
+
+    .request-card {
+        border: 1px solid #e5e7eb;
+        border-radius: 10px;
+        padding: 18px;
+        margin-top: 15px;
+        background: white;
+    }
+
+    .user-name {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .skill-badge {
+        background: #f0edff;
+        color: #635bdb;
+        padding: 7px 12px;
+        border-radius: 20px;
+        margin: 3px;
+        display: inline-block;
+    }
+
+    .accept-btn {
+        background: white;
+        color: #198754;
+        border: 1px solid #198754;
+    }
+
+    .reject-btn {
+        background: white;
+        color: #dc3545;
+        border: 1px solid #dc3545;
+    }
+
+    .status {
+        padding: 8px 15px;
+        border-radius: 8px;
+        display: inline-block;
+        font-weight: bold;
+    }
+
+    .Pending {
+        background: #fff3cd;
+        color: #d58a00;
+    }
+
+    .Accepted {
+        background: #d1f7e2;
+        color: #198754;
+    }
+
+    .Rejected {
+        background: #ffe1e1;
+        color: #dc3545;
+    }
+
+    .empty-message {
+        text-align: center;
+        padding: 25px;
+        color: #777;
+    }
+
+    .section-title {
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+</style>
+
+</head>
+<body><!-- Navbar -->
+  
+      <%- include("../includes/navbar") %>
+      <% if(success && success.length) { %>
+  <div class="alert alert-success alert-dismissible fade show col-6 offset-3" role="alert">
+ <%=success%>
+ <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<%}%>
+
+<% if(error && error.length) { %>
+  <div class="alert alert-danger alert-dismissible fade show col-6 offset-3" role="alert">
+ <%=error%>
+ <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<%}%>
+<div class="container"><!-- Page Heading -->
+<div class="page-header">
+    <h1 class="fw-bold">My Requests</h1>
+    <p class="text-secondary">
+        Manage your skill exchange requests.
+    </p>
+
+</div>
+
+
+<!-- Received Requests -->
+<div class="section-box">
+
+    <h4 class="section-title">📥 Received Requests</h4>
+
+    <p class="text-secondary">
+        Requests from other users who want to learn from you.
+    </p>
+
+    <% if (receivedRequests.length === 0) { %>
+
+        <div class="empty-message">
+            <h5>No Received Requests</h5>
+            <p>You haven't received any requests yet.</p>
+        </div>
+
+    <% } else { %>
+
+        <% receivedRequests.forEach(request => { %>
+
+            <div class="request-card row align-items-center">
+
+                <div class="col-md-3">
+                    <div class="user-name">
+                        <%= request.sender ? request.sender.username : "Unknown User" %>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <p class="text-secondary mb-1">
+                        Wants to connect with you
+                    </p>
+                </div>
+
+                <div class="col-md-5 text-md-end">
+
+                    <% if (request.status === "Pending") { %>
+
+                        <form action="/request/accept/<%= request._id %>"
+                              method="POST" class="d-inline">
+
+                            <button class="btn accept-btn">
+                                ✓ Accept
+                            </button>
+
+                        </form>
+
+                        <form action="/request/reject/<%= request._id %>"
+                              method="POST" class="d-inline">
+
+                            <button class="btn reject-btn">
+                                ✕ Reject
+                            </button>
+
+                        </form>
+
+                    <% } else { %>
+
+                        <span class="status <%= request.status %>">
+                            <%= request.status %>
+                        </span>
+
+                    <% } %>
+                <% if (request.status === "Accepted") { %>
+
+    <a href="mailto:<%= request.sender.email %>"
+       class="btn btn-primary">
+        Contact User
+    </a>
+
+<% } %>
+                </div>
+
+            </div>
+
+        <% }) %>
+
+    <% } %>
+
+</div>
+
+
+<!-- Sent Requests -->
+<div class="section-box">
+
+    <h4 class="section-title">📤 Sent Requests</h4>
+
+    <p class="text-secondary">
+        Requests you have sent to other users.
+    </p>
+
+    <% if (sentRequests.length === 0) { %>
+
+        <div class="empty-message">
+            <h5>No Sent Requests</h5>
+            <p>You haven't sent any requests yet.</p>
+        </div>
+
+    <% } else { %>
+
+        <% sentRequests.forEach(request => { %>
+
+            <div class="request-card row align-items-center">
+
+                <div class="col-md-4">
+
+                    <div class="user-name">
+                        <%= request.receiver ? request.receiver.username : "Unknown User" %>
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+                    <p class="text-secondary mb-1">
+                        Skill Exchange Request
+                    </p>
+                </div>
+
+                <div class="col-md-4 text-md-end">
+
+                    <span class="status <%= request.status %>">
+                        <%= request.status %>
+                    </span>
+                      <% if (request.status === "Accepted") { %>
+
+    <a href="mailto:<%= request.receiver.email %>"
+       class="btn btn-primary">
+        Contact User
+    </a>
+
+<% } %>
+                    <p class="text-secondary small mt-2 mb-0">
+                        Requested on
+                        <%= new Date(request.createdAt).toLocaleDateString() %>
+                    </p>
+
+                </div>
+
+            </div>
+
+        <% }) %>
+
+    <% } %>
+
+</div>
+
+</div>
+<%-include("../includes/footer")%>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

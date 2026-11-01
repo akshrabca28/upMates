@@ -1,0 +1,92 @@
+/* Main Footer */
+.custom-footer {
+background: #172b4d;
+color: #ffffff;
+padding: 55px 0 20px;
+font-family: Arial, sans-serif;
+margin-top: 60px;
+}
+
+/* Logo */
+.footer-logo {
+font-size: 28px;
+font-weight: bold;
+margin-bottom: 18px;
+}
+
+.footer-logo span {
+color: #60a5fa;
+}
+
+/* Description */
+.footer-description {
+color: #cbd5e1;
+font-size: 14px;
+line-height: 1.8;
+max-width: 350px;
+}
+
+/* Headings */
+.custom-footer h5 {
+font-size: 18px;
+font-weight: 600;
+margin-bottom: 20px;
+}
+
+/* Links */
+.footer-links {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.footer-links li {
+margin-bottom: 13px;
+}
+
+.footer-links a {
+color: #cbd5e1;
+text-decoration: none;
+font-size: 14px;
+transition: 0.3s;
+}
+
+.footer-links a:hover {
+color: #60a5fa;
+padding-left: 5px;
+}
+
+/* Divider */
+.footer-divider {
+border-color: #64748b;
+margin: 35px 0 20px;
+}
+
+/* Bottom Section */
+.footer-bottom {
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+gap: 10px;
+}
+
+.footer-bottom p {
+color: #cbd5e1;
+font-size: 13px;
+margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+.custom-footer {
+    padding: 40px 0 20px;
+}
+
+.footer-bottom {
+    flex-direction: column;
+    text-align: center;
+}
+
+}
