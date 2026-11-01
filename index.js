@@ -223,17 +223,11 @@ res.redirect("/skills");
         return res.send("Skill not found");
     }
 req.flash("success","skill Updated!");
-    res.render("../views/users/editskill.ejs", { skill });
+    res.render("../views/users/editSkill.ejs", { skill });
 });
 
 
-// app.put("/skills/:id",async(req,res)=>{
-//   let {id} = req.params;
-//   let upddateskill = await Skill.findByIdAndUpdate(id);
-//  console.log(upddateskill);
-//  req.flash("success","listing Updated!");
-//   res.redirect("/skills");
-// })
+
 app.put("/skills/:id", isLoggedIn, async (req, res) => {
 
     let { id } = req.params;
